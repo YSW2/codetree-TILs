@@ -6,8 +6,10 @@ j = 0
 for i in range(n):
     if arr_n[i] == arr_m[j]:
         j += 1
+    if j == m:
+        break
 
-if j <= m:
+if j == m:
     print("Yes")
 
 else:

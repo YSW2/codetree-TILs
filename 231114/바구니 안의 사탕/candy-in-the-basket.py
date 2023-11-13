@@ -9,7 +9,7 @@ for i in range(n):
     arr[basket] += candy
     max_basket = max(basket, max_basket)
 
-candy_num = sum(arr[:max(len(arr), k*2)])
+candy_num = sum(arr[: k*2])
 answer = candy_num
 
 j = 0

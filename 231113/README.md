@@ -8,10 +8,11 @@
 
 |총 문제수|획득 경험치|연속 학습|
 |---:|---:|---|
-1|40xp|1일째🔥|
+2|40xp|1일째🔥|
 
 |교재|이름|난이도|상태|최근 제출 코드|
 |---|---|:---:|:---:|---|
+|[Intermediate Mid / Shorten time Technique / Two Pointer](https://www.codetree.ai/missions?missionId=8)|[[개념]가장 짧은 부분합](https://www.codetree.ai/missions/8/problems/shortest-subtotal)|![쉬움][easy]|![Passed][passed]|[링크](https://github.com/YSW2/codetree-TILs/blob/main/231113/%EA%B0%80%EC%9E%A5%20%EC%A7%A7%EC%9D%80%20%EB%B6%80%EB%B6%84%ED%95%A9/shortest-subtotal.py)|
 |[Intermediate Mid / Shorten time Technique / Two Pointer](https://www.codetree.ai/missions?missionId=8)|[[개념]겹치는 숫자가 없는 최대 구간](https://www.codetree.ai/missions/8/problems/max-interval-without-overlapping-numbers)|![쉬움][easy]|![Passed][passed]|[링크](https://github.com/YSW2/codetree-TILs/blob/main/231113/%EA%B2%B9%EC%B9%98%EB%8A%94%20%EC%88%AB%EC%9E%90%EA%B0%80%20%EC%97%86%EB%8A%94%20%EC%B5%9C%EB%8C%80%20%EA%B5%AC%EA%B0%84/max-interval-without-overlapping-numbers.py)|
 
 

@@ -7,19 +7,18 @@ for i in range(n):
 
 arr.sort()
 
-for i in range(1, n):
-    if arr[0] + arr[i] > k:
+for i in range(n-1, 0, -1):
+    if arr[i] + arr[i-1] <= k:
         break
 
-index = i-1
+index = i
+j = index - 1
+answer = (j+1)*j // 2
 
-j = 0
-for i in range(index, 0, -1):
-    if i < j:
-        break
-    while j < i and arr[i] + arr[j] <= k:
-        j += 1
-    if arr[i] + arr[j-1] <= k:
-        answer += j
-    
+for i in range(index, n):
+    while j > 0 and arr[j] + arr[i] > k:
+        j -= 1
+    if arr[j] + arr[i] <= k:
+        answer += j+1
+
 print(answer)

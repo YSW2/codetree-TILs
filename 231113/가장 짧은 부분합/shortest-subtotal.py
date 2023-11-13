@@ -9,7 +9,10 @@ for i in range(n):
     while j < n and arr_sum < s:
         arr_sum += arr[j]
         j += 1
-    answer = min(answer, j-i+1)
+    
+    if arr_sum >= s:
+        answer = min(answer, j-i)
+
     arr_sum -= arr[i]
 
 

@@ -1,7 +1,7 @@
 n, s = map(int, input().split())
 arr = list(map(int, input().split()))
 
-answer = n
+answer = n+1
 arr_sum = arr[0]
 j = 1
 
@@ -15,5 +15,7 @@ for i in range(n):
 
     arr_sum -= arr[i]
 
-
-print(answer)
+if answer > n:
+    print(-1)
+else:
+    print(answer)

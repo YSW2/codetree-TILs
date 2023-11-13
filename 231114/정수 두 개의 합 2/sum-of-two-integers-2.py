@@ -5,9 +5,13 @@ answer = 0
 for i in range(n):
     arr.append(int(input()))
 
-for i in range(n-1):
-    for j in range(i+1, n):
-        if arr[i] + arr[j] <= k:
-            answer += 1
+arr.sort()
+
+j = n - 2
+for i in range(n-1, 0, -1):
+    while j > 0 and arr[i] + arr[j] > k:
+        j -= 1
+    if arr[i] + arr[j] <= k:
+        answer += j+1
 
 print(answer)

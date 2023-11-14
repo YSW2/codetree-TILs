@@ -1,7 +1,7 @@
 n = int(input())
 arr = list(map(int, input().split()))
 arr.sort()
-answer = arr[n-1]
+answer = float("inf")
 
 j = n-1
 for i in range(n):

@@ -9,7 +9,7 @@ for i in range(n):
         break
     answer = min(abs(arr[i]+arr[j]), answer)
     while j > i and arr[i] + arr[j] > 0:
-        j -= 1
         answer = min(abs(arr[i]+arr[j]), answer)
-
+        j -= 1
+        
 print(answer)

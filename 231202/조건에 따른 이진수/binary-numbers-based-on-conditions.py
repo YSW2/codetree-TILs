@@ -1,21 +1,9 @@
-answer = 0
 n = int(input())
+dp = [0 for x in range(n+1)]
 
-def search(arr, i):
-    global answer
-    if i == len(arr):
-        answer += 1
-        return
-    
-    if arr[i-1] == 0:
-        arr[i] = 1
-        search(arr, i+1)
-        arr[i] = 0
-        search(arr, i+1)
-    else:
-        search(arr, i+1)
+dp[0] = 1
+dp[1] = 1
+for i in range(2, n):
+    dp[i] = dp[i-1] + dp[i-2]
 
-arr = [0 for x in range(n)]
-arr[0] = 1
-search(arr, 1)
-print(answer)
+print(dp[n-1])

@@ -1,20 +1,23 @@
 n = int(input())
 arr = list(input())
-string = ['a', 'b', 'c']
-idx = 0
-start = 0
-str_idx = 0
-answer = 0
+dp = [0 for x in range(n)]
 
-while idx < len(arr):
-    if arr[idx] != string[(str_idx+1)%3]:
-        idx += 1
+def find_near(arr, i):
+    string = ['a', 'b', 'c']
+    target = (string.index(arr[i])+1)%3
+    while i < len(arr):
+        if arr[i] == string[target]:
+            return i
+        i += 1
+
+    return -1
+
+
+for i in range(n-2, -1, -1):
+    idx = find_near(arr, i)
+    if idx == -1:
+        dp[i] = -1
     else:
-        answer += (idx-start) ** 2
-        start = idx
-        str_idx += 1
+        dp[i] = dp[idx] + (idx-i) ** 2
 
-if answer:
-    print(answer)
-else:
-    print(-1)
+print(dp[0])

@@ -1,25 +1,21 @@
 answer = 0
 n = int(input())
 
-def search(arr, n):
+def search(arr, i):
     global answer
-    if len(arr) >= n:
+    if i == len(arr):
         answer += 1
         return
-
-    if len(arr) == 0:
-        arr.append(1)
-        search(arr, n)
-        arr.pop()
-    elif arr[-1] == 1:
-        arr.append(0)
-        search(arr, n)
-        arr.pop()
+    
+    if arr[i-1] == 0:
+        arr[i] = 1
+        search(arr, i+1)
+        arr[i] = 0
+        search(arr, i+1)
     else:
-        for i in range(2):
-            arr.append(i)
-            search(arr, n)
-            arr.pop()
+        search(arr, i+1)
 
-search([], n)
+arr = [0 for x in range(n)]
+arr[0] = 1
+search(arr, 1)
 print(answer)

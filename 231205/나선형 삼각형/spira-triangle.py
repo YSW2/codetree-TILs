@@ -3,9 +3,11 @@ dp = [0 for x in range(n)]
 
 def recursive(n):
     if n <= 2:
+        dp[n] = 1
         return 1
     
     elif n <= 4:
+        dp[n] = 2
         return 2
     
     else:

@@ -1,8 +1,7 @@
-import sys
-sys.setrecursionlimit(10**4)
-
 n = int(input())
+coin = [1, 2, 5, 7]
 answer = float("inf")
+temp = 0
 
 def dfs(arr, n):
     global answer
@@ -12,21 +11,14 @@ def dfs(arr, n):
             answer = min(len(arr), answer)
         return
     
-    if n >= 7:
-        arr.append(7)
-        dfs(arr, n-7)
+    for c in coin:
+        arr.append(c)
+        dfs(arr, n-c)
+        arr.pop()
 
-    elif n >= 5:
-        arr.append(5)
-        dfs(arr, n-5)
-    
-    elif n >= 2:
-        arr.append(2)
-        dfs(arr, n-2)
-    
-    else:
-        arr.append(1)
-        dfs(arr, n-1)
+if n > 100:
+    temp = (n-100) // 7
+    n -= temp * 7
 
 dfs([], n)
-print(answer)
+print(answer+temp)

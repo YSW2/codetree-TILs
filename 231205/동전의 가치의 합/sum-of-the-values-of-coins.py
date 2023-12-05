@@ -20,11 +20,13 @@ def dfs(arr, n):
         arr.append(5)
         dfs(arr, n-5)
     
+    elif n >= 2:
+        arr.append(2)
+        dfs(arr, n-2)
+    
     else:
-        for i in range(1, 3):
-            arr.append(i)
-            dfs(arr, n-i)
-            arr.pop()
+        arr.append(1)
+        dfs(arr, n-1)
 
 dfs([], n)
 print(answer)

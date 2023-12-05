@@ -16,8 +16,8 @@ def dfs(arr, n):
         dfs(arr, n-c)
         arr.pop()
 
-if n > 100:
-    temp = (n-100) // 7
+if n > 10:
+    temp = (n-10) // 7
     n -= temp * 7
 
 dfs([], n)

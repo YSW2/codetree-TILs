@@ -1,3 +1,6 @@
+import sys
+sys.setrecursionlimit(10**4)
+
 n = int(input())
 answer = float("inf")
 

@@ -1,5 +1,4 @@
 n = int(input())
-coin = [1, 2, 5, 7]
 answer = float("inf")
 
 def dfs(arr, n):
@@ -10,10 +9,19 @@ def dfs(arr, n):
             answer = min(len(arr), answer)
         return
     
-    for c in coin:
-        arr.append(c)
-        dfs(arr, n-c)
-        arr.pop()
+    if n >= 7:
+        arr.append(7)
+        dfs(arr, n-7)
+
+    elif n >= 5:
+        arr.append(5)
+        dfs(arr, n-5)
+    
+    else:
+        for i in range(1, 3):
+            arr.append(i)
+            dfs(arr, n-i)
+            arr.pop()
 
 dfs([], n)
 print(answer)

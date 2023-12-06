@@ -5,7 +5,6 @@ arr = list(map(int, input().split()))
 answer = 0
 
 while len(arr) > 1:
-    heapq.heapify(arr)
     num1 = heapq.heappop(arr)
     num2 = heapq.heappop(arr)
 

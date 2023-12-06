@@ -16,5 +16,7 @@ def greedy(n, arr, day, pay):
     for i, (t, p) in enumerate(arr):
         greedy(n, arr[i+t:], day+i+t, pay+p)
 
+    greedy(n, arr, n, pay)
+
 greedy(n, arr, 0, 0)
 print(answer)

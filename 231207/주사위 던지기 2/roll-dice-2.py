@@ -1,6 +1,9 @@
 n, m = map(int, input().split())
 
 def throw(arr, n, m):
+    if sum(arr) + (n-len(arr)) * 6 < m:
+        return
+        
     if sum(arr) > m:
         return
     

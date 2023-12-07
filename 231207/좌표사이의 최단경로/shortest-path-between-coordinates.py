@@ -1,25 +1,20 @@
 a, b = map(int, input().split())
-go = [(1, 0), (0, 1)]
-answer = 0
 
 s = min(a, b)
 f = max(a, b)
 
-def search(i, j):
-    global answer
+dp = [[0 for x in range(f+1)] for x in range(f+1)]
 
-    if i > j:
-        return
+dp[s][s] = 1
 
-    if i > f or j > f:
-        return
+for i in range(s+1, f+1):
+    dp[s][i] += dp[s][i-1]
 
-    if (i, j) == (f, f):
-        answer += 1
+for i in range(s+1, f+1):
+    for j in range(s+1, f+1):
+        if i > j:
+            continue
+        
+        dp[i][j] = dp[i][j-1] + dp[i-1][j]
     
-    for go_y, go_x in go:
-        search(i+go_y, j+go_x)
-
-search(s, s)
-
-print(answer)
+print(dp[f][f])

@@ -3,6 +3,17 @@ import copy
 n = int(input())
 arr = list(map(int, input().split()))
 
+
+def check(arr):
+    for i in range(len(arr)):
+        if i == 0 and arr[i] > 0:
+            return False
+
+        elif arr[i] > 0 and arr[i] - arr[i-1] != 1:
+            return False
+    
+    return True
+
 idx = 0
 
 while idx < len(arr):
@@ -35,5 +46,9 @@ for i in range(len(arr2)):
     else:
         val = arr2[i] + 1
 
-#print(arr, arr2)
-print(arr2.count(0), arr.count(0))
+if check(arr):
+    print(arr, arr2)
+    print(arr2.count(0), arr.count(0))
+
+else:
+    print(-1)

@@ -1,6 +1,6 @@
 n = int(input())
 arr = list(map(int, input().split()))
-answer = []
+answer = [float("inf"), 0]
 
 def search(arr2, i):
     global answer
@@ -9,7 +9,10 @@ def search(arr2, i):
         return
 
     if i == len(arr)-1:
-        answer.append(arr2.count(0))
+        val = arr2.count(0)
+        answer[0] = min(val, answer[0])
+        answer[1] = max(val, answer[1])
+
         return
 
     arr2.append(0)
@@ -25,7 +28,7 @@ if arr[0] > 0:
 
 else:
     search([0], 0)
-    if len(answer) > 0:
-        print(min(answer), max(answer))
+    if answer[1] > 0:
+        print(answer[0], answer[1])
     else:
         print(-1)

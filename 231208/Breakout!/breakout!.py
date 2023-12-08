@@ -25,4 +25,7 @@ if arr[0] > 0:
 
 else:
     search([0], 0)
-    print(min(answer), max(answer))
+    if len(answer) > 0:
+        print(min(answer), max(answer))
+    else:
+        print(-1)

@@ -19,6 +19,7 @@ else:
                 arr2[temp_idx] = temp
                 temp_idx -= 1
                 temp -= 1
+            val = arr[idx]
             idx += 1
                 
         else:

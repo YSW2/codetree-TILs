@@ -5,10 +5,10 @@ answer = []
 def search(arr2, i):
     global answer
 
+    if arr[i] > 0 and arr[i] != arr2[i]:
+        return
+
     if i == len(arr)-1:
-        for idx in range(len(arr)):
-            if arr[idx] > 0 and arr2[idx] != arr[idx]:
-                return
         answer.append(arr2.count(0))
         return
 

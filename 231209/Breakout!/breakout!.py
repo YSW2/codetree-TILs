@@ -33,7 +33,7 @@ for i in range(len(arr2)):
         arr2[i] = val
         val += 1
     else:
-        val = 0
+        val = arr2[i] + 1
 
 #print(arr, arr2)
 print(arr2.count(0), arr.count(0))

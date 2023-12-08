@@ -47,7 +47,7 @@ for i in range(len(arr2)):
         val = arr2[i] + 1
 
 if check(arr):
-    print(arr, arr2)
+    #print(arr, arr2)
     print(arr2.count(0), arr.count(0))
 
 else:

@@ -5,7 +5,7 @@ answer = []
 def search(arr2, i):
     global answer
 
-    if arr[i] > 0 and arr[i] != arr2[i]:
+    if arr[i] >= 0 and arr[i] != arr2[i]:
         return
 
     if i == len(arr)-1:

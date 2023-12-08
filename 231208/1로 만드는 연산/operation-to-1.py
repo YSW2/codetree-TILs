@@ -4,6 +4,9 @@ answer = float("inf")
 def search(n, count):
     global answer
 
+    if count > answer:
+        return
+        
     if n == 1:
         answer = min(answer, count)
         return

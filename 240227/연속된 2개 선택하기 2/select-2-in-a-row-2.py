@@ -15,7 +15,7 @@ for i in range(n):
         max_index = i
 
 temp = answer
-for j in range(max_index):
+for j in range(max_index+1):
     temp /= arr[j]
     if answer < temp:
         answer = temp

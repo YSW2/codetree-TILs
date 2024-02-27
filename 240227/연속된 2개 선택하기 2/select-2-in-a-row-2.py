@@ -1,23 +1,8 @@
 n = int(input())
-arr = []
+dp = [float(input())]
 
-for _ in range(n):
-    arr.append(float(input()))
+for i in range(1, n):
+    num = float(input())
+    dp.append(max(dp[i-1]*num, num))
 
-answer = arr[0]
-temp = 1
-max_index = 0
-
-for i in range(n):
-    temp *= arr[i]
-    if answer < temp:
-        answer = temp
-        max_index = i
-
-temp = answer
-for j in range(max_index+1):
-    temp /= arr[j]
-    if answer < temp:
-        answer = temp
-
-print(round(answer, 4))
+print(round(max(dp), 3))

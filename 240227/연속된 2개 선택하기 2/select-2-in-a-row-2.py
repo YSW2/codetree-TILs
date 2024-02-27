@@ -5,4 +5,5 @@ for i in range(1, n):
     num = float(input())
     dp.append(max(dp[i-1]*num, num))
 
-print(round(max(dp), 3))
+answer = max(dp)
+print(f"{answer:.3f}")

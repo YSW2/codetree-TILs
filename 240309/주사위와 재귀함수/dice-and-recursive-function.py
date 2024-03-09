@@ -5,11 +5,13 @@ def roll(x, y, result):
                 print(n, end=" ")
             print()
             return
-
+    
+    if sum(result) > y:
+        return
+        
     for i in range(1, 7):
         result.append(i)
-        if sum(result) <= y:
-            roll(x-1, y, result)
+        roll(x-1, y, result)
         result.pop()
 
 x, y = map(int, input().split())

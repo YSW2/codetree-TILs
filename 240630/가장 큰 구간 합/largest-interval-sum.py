@@ -14,7 +14,7 @@ for i in range(m, n):
     else:
         sum_result[init] = 1
 
-sum_result = sorted(sum_result.items(), key=lambda x:x[0])
+sum_result = sorted(sum_result.items(), key=lambda x:x[0], reverse=True)
 
 print(sum_result[0][0])
 if sum_result[0][0] != 0:
